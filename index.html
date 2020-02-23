@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,  minimum-scale=1.0">
+    <title></title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.15/lodash.min.js" integrity="sha256-VeNaFBVDhoX3H+gJ37DpT/nTuZTdjYro9yBruHjVmoQ=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha256-WqU1JavFxSAMcLP2WIOI+GB2zWmShMI82mTpLDcqFUg=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha256-L/W5Wfqfa0sdBNIKN9cG6QA5F2qx4qICmU2VgLruv9Y=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="Vector2D.js" charset="utf-8"></script>
+    <script src="Matrix.js" charset="utf-8"></script>
+    <script src="utils.js" charset="utf-8"></script>
+    <script src="transform.js" charset="utf-8"></script>
+    <script src="buttons.js" charset="utf-8"></script>
+    <script src="drawing.js" charset="utf-8"></script>
+    <script src="monsterTemplate.js" charset="utf-8"></script>
+    <script src="script.js" charset="utf-8"></script>
+    <style type="text/css">
+      html, body { margin: 0; width: 100vw; height: 100vh; overflow-x: hidden }
+      body { position: relative; }
+      canvas { display: block; }
+      .root {
+        height: 100vh; /* Fallback for browsers that do not support Custom Properties */
+        height: calc(var(--vh, 1vh) * 100);
+      }
+      .colorSelect {
+        font-size: 2em;
+        margin-right: .5em;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="d-flex flex-column justify-content-between align-items-middle root">
+      <div class="btn-toolbar m-1">
+        <div class="btn-group partSelector">
+          <button name="head" type="button" class="btn btn-sm btn-outline-secondary">Head</button>
+          <button name="arm_l" type="button" class="btn btn-sm btn-outline-secondary">Left Arm</button>
+          <button name="torso" type="button" class="btn btn-sm btn-outline-secondary">Torso</button>
+          <button name="arm_r" type="button" class="btn btn-sm btn-outline-secondary">Right Arm</button>
+          <button name="legs" type="button" class="btn btn-sm btn-outline-secondary">Legs</button>
+        </div>
+
+        <button id="showAll" type="button" class="ml-2 btn btn-sm btn-primary">Show all</button>
+        <a id="save" class="ml-2 d-none btn btn-sm btn-primary">Save</a>
+
+        <!-- <div class="btn-group ml-2">
+          <button id="debug" type="button" class="btn btn-sm btn-outline-danger">Debug</button>
+        </div> -->
+      </div>
+      <div class="flex-grow flex-fill">
+        <canvas />
+      </div>
+      <div class="btn-toolbar m-1 px-2 d-flex justify-content-between">
+        <div class="d-flex">
+          <i data-color="#000" class="colorSelect fa fa-circle"></i>
+          <i data-color="#f00" class="colorSelect fa fa-circle"></i>
+          <i data-color="#0f0" class="colorSelect fa fa-circle"></i>
+          <i data-color="#00f" class="colorSelect fa fa-circle"></i>
+          <i data-color="#fff" style="color: black" class="colorSelect fa fa-circle-thin"></i>
+        </div>
+        <button id="undo" type="button" class="ml-2 btn btn-sm btn-outline-primary">
+          <i class="fa fa-undo"></i>
+        </button>
+      </div>
+    </div>
+  </body>
+</html>
